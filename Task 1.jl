@@ -16,7 +16,7 @@ function MarkToBorder(Num)
     end
 end
 for i = 1:4
-    println("ww")
     MarkToBorder(i)
     global c = 0
 end
+putmarker!(r)
