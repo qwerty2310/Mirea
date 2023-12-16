@@ -17,8 +17,14 @@ function along_chess!(r, side, flag::Bool)
     return flag
 end
 function snake_chess!(robot, (move_side, next_row_side)::NTuple{2,HorizonSide}=(Ost, Nord))   #функция змейки, дополненная до маркировки в шахматном порядке
+    x,y = GoToCorner!(r)
+    if (x+y)%2==0
+        flag = true
+    else
+        flag = false
+    end
     while !isborder(robot,move_side)
-        flag = along_chess!(robot, next_row_side, true)
+        flag = along_chess!(robot, next_row_side, flag)
         if isborder(robot, move_side)
             break
         end
@@ -29,8 +35,8 @@ function snake_chess!(robot, (move_side, next_row_side)::NTuple{2,HorizonSide}=(
         end
         move!(robot, move_side)
     end
+    GoToCorner!(r)
+    GoBack!(r,x,y)
 end
-x,y = GoToCorner!(r)
+
 snake_chess!(r)
-GoToCorner!(r)
-GoBack!(r,x,y)
