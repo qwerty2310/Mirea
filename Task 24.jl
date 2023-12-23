@@ -16,3 +16,5 @@ function no_delayed_action!(robot,side)
         halfdist!(robot, side)
     end
 end
+
+halfdist!(r, West)
