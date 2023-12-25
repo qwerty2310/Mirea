@@ -16,5 +16,5 @@ function chessline!(r,side::HorizonSideRobots.HorizonSide, n::Integer)
     along_recursion!(r, side, n)
 end
 
-chessline!(r, Ost, 1)  #В зависимости от того, какую часть (а или б) мы решаем, ставим 0 или 1 в третий парметр
+chessline!(r, Ost, 1)  #В зависимости от того, какую часть (а или б) мы решаем, ставим 0 или 1 в третий параметр
 sleep(5)
